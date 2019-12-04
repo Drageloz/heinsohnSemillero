@@ -7,7 +7,8 @@ import { ComicDTO } from '../../dto/comic.dto';
  */
 @Component({
     selector: 'crear-persona',
-    templateUrl: './crear-persona-component.html'
+    templateUrl: './crear-persona-component.html',
+    styleUrls: ['./crear-persona-component.css']
 })
 export class CrearPersonaComponent implements OnInit{
     
