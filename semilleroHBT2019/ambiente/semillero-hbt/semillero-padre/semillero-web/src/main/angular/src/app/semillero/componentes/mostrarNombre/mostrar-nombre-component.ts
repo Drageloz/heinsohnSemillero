@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 /**
  * @description La clase MostrarNombreComponent permite mostrar Nombre y ciudad de residencia de Autor
@@ -20,7 +21,9 @@ export class MostrarNombreComponent implements OnInit{
      * @description Este es el constructor del componente MostrarNombreComponent
      * @author Andres Dario Suarez Guarnizo <andres.dario1906@gmail.com>
      */
-    constructor(){}
+    constructor(private router : Router, private activatedRoute: ActivatedRoute){
+        console.log("entro al constructor del componente mostrar-nombre");
+    }
     
     /**
      * @description Evento angular que se ejecuta al invocar el componente
