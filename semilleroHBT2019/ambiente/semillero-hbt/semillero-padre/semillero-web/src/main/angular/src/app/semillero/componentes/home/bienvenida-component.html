@@ -1,4 +1,27 @@
+<!--mostrar-nombre Imprime el nombre y localización del autor-->
 <mostrar-nombre></mostrar-nombre>
 <img [src]="urlImagen" height="500" width="1000" (click)="ejecucionEventoClick('Diego alvarez', 323423)">
 <crear-persona></crear-persona>
 <input type="text" class="form-control-plaintext" id="staticEmail" [(ngModel)]="urlImagen" name="urlImagen">
+<br>
+<pre style="width: 1000px;">{{jsonList}}</pre> 
+<br>
+<br>
+<!--Lista en viñetas por nota de investigación-->
+<h3>A continuación los comics por nombre en una lista</h3>
+<ul>
+    <li>{{dataList[0].nombre}}</li>
+    <li>{{dataList[1].nombre}}</li>
+    <li>{{dataList[2].nombre}}</li>
+    <li>{{dataList[3].nombre}}</li>
+    <li>{{dataList[4].nombre}}</li>
+</ul>
+
+<!--Buton que elimina la posición 3 del JSON-->
+<h3>El siguiente Botón borra el comic de id:4 (posición 3) del anterior Json</h3>
+<button id="btnErase" (click)="ejecucionEventoClickButton(3)" class="btn-danger">Borrar</button>
+
+<!--El siguiente div aparece una ves se da Click sobre el botón--> 
+<div *ngIf="mostarMensaje">Se ha eliminado el comic: {{erasedElement}}</div> 
+
+
