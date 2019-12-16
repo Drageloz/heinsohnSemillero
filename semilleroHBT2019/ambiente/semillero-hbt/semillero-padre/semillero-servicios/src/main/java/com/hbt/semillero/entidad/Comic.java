@@ -16,6 +16,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.hbt.semillero.dto.ConsultaIva;
 
 /**
  * <b>DescripciÃ³n:<b> Clase que determina la entidad que permite representar la
@@ -47,14 +50,14 @@ public class Comic implements Serializable {
 	private LocalDate fechaVenta;
 	private EstadoEnum estadoEnum;
 	private Long cantidad;
-
+	private Double iva;
+	private Double precioTotal;
+	
+	
 	/**
 	 * Constructor de la clase.
 	 */
-	public Comic() {
-
-	}
-
+	
 	/**
 	 * Metodo encargado de retornar el valor del atributo id
 	 * 
@@ -286,6 +289,44 @@ public class Comic implements Serializable {
 	 */
 	public void setCantidad(Long cantidad) {
 		this.cantidad = cantidad;
+	}
+
+	/**
+	 * Metodo encargado de retornar el valor del atributo IVA
+	 * 
+	 * @return El iva asociado a la clase
+	 */
+	@Transient
+	public Double getIva() {
+		return iva;
+	}
+
+	/**
+	 * Metodo encargado de modificar el valor del atributo setIva
+	 * 
+	 * @param iva El nuevo cantidad a modificar.
+	 */
+	public void setIva(Double iva) {
+		this.iva = iva;
+	}
+
+	/**
+	 * Metodo encargado de retornar el valor del atributo precioTotal
+	 * 
+	 * @return El precioTotal asociado a la clase
+	 */
+	@Transient
+	public Double getPrecioTotal() {
+		return precioTotal;
+	}
+
+	/**
+	 * Metodo encargado de modificar el valor del atributo setPrecioTotal
+	 * 
+	 * @param precioTotal El nuevo precioTotal a modificar.
+	 */
+	public void setPrecioTotal(Double precioTotal) {
+		this.precioTotal = precioTotal;
 	}
 
 	/**

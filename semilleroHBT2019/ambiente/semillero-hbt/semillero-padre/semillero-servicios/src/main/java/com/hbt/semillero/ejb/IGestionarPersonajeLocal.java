@@ -68,4 +68,12 @@ public interface IGestionarPersonajeLocal {
 	 */
 	public List<PersonajeDTO>  consultarPersonajes(Long idComic);
 	
+	
+	
+	default double defaultMethod(){
+		return 0;
+		
+	}
+
+
 }

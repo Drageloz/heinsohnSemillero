@@ -11,9 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
-import com.hbt.semillero.dto.ComicDTO;
 import com.hbt.semillero.dto.PersonajeDTO;
-import com.hbt.semillero.ejb.IGestionarComicLocal;
 import com.hbt.semillero.ejb.IGestionarPersonajeLocal;
 
 @Path("/GestionarPersonaje")
@@ -45,11 +43,20 @@ public class GestionarPersonajeRest {
 		
 	};
 	
+	@GET
+	@Path("/consultarDefault")
+	@Produces(MediaType.APPLICATION_JSON)
+	public double consultarDefault(){
+		return gestionarPersonajeEJB.defaultMethod();
+	};
+	
 	@POST
 	@Path("/crearPersonaje")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void crearPersonaje(PersonajeDTO personajeDTO) {
 		gestionarPersonajeEJB.crearPersonaje(personajeDTO);	
 	}
-
+	
+	
+	
 }

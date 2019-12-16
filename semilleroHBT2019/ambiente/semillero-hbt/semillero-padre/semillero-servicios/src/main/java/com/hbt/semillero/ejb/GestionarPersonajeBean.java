@@ -13,6 +13,9 @@ import javax.persistence.PersistenceContext;
 
 import org.apache.log4j.Logger;
 
+import com.hbt.semillero.dto.Circulo;
+import com.hbt.semillero.dto.Cuadrado;
+import com.hbt.semillero.dto.Figura;
 import com.hbt.semillero.dto.PersonajeDTO;
 import com.hbt.semillero.dto.PersonajeDTO;
 import com.hbt.semillero.entidad.Comic;
@@ -134,6 +137,24 @@ public class GestionarPersonajeBean implements IGestionarPersonajeLocal{
 		logger.debug("Aqui finaliza el metodo convertirEntidadDTO");
 		return personajeDTO;
 	}
-
+	
+	@Override
+	public double defaultMethod(){
+		Cuadrado c = new Cuadrado(5,7);
+		double areaCuadrado = c.calcularArea();
+		double areaFiguraCuadrado = c.area();
+		logger.debug("Area del cuadrado" + areaCuadrado);
+		logger.debug("Area del cuadrado abstract" + areaFiguraCuadrado);
+		
+		Circulo cir = new Circulo(5);
+		double areaCirculo = cir.calcularArea();
+		double areaFiguraCirculo = cir.area();
+		logger.debug("Area del circulo" + areaCirculo);
+		logger.debug("Area del Circulo abstract" + areaFiguraCirculo);
+		
+		
+		return areaCuadrado + areaFiguraCuadrado + areaCirculo + areaFiguraCuadrado;
+		
+	}
 
 }

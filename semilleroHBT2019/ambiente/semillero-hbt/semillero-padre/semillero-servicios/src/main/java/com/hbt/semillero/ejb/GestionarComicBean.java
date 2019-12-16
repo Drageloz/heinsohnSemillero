@@ -17,6 +17,7 @@ import javax.persistence.PersistenceContext;
 import org.apache.log4j.Logger;
 
 import com.hbt.semillero.dto.ComicDTO;
+import com.hbt.semillero.dto.ConsultaIva;
 import com.hbt.semillero.entidad.Comic;
 
 /**
@@ -114,6 +115,8 @@ public class GestionarComicBean implements IGestionarComicLocal {
 	 */
 	private ComicDTO convertirComicToComicDTO(Comic comic) {
 		ComicDTO comicDTO = new ComicDTO();
+		ConsultaIva precioIva = new ConsultaIva(comic);
+		
 		if(comic.getId()!=null) {
 		 comicDTO.setId(comic.getId().toString());
 		}
@@ -128,6 +131,8 @@ public class GestionarComicBean implements IGestionarComicLocal {
 		comicDTO.setFechaVenta(comic.getFechaVenta());
 		comicDTO.setEstadoEnum(comic.getEstadoEnum());
 		comicDTO.setCantidad(comic.getCantidad());
+		comicDTO.setIva(comic.getIva());
+		comicDTO.setPrecioTotal(comic.getPrecioTotal());
 		return comicDTO;
 	}
 
@@ -140,6 +145,7 @@ public class GestionarComicBean implements IGestionarComicLocal {
 	 */
 	private Comic convertirComicDTOToComic(ComicDTO comicDTO) {
 		Comic comic = new Comic();
+		
 		if(comicDTO.getId()!=null) {
 			comic.setId(Long.parseLong(comicDTO.getId()));
 		}
