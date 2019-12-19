@@ -22,6 +22,7 @@ export { ResultadoDTO } from './semillero/dto/resultado.dto';
 import {EjemploService} from './semillero/services/ejemplo.service';
 import {AbstractService} from './semillero/services/template.service';
 import { MostrarNombreComponent } from './semillero/componentes/mostrarNombre/mostrar-nombre-component';
+import { GestionarFormularioCRUDComponent } from './semillero/componentes/crudFormulario/crud-formulario';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MostrarNombreComponent } from './semillero/componentes/mostrarNombre/mo
     BienvenidaComponent,
     CrearPersonaComponent,
     GestionarComicComponent,
-    MostrarNombreComponent
+    MostrarNombreComponent,
+    GestionarFormularioCRUDComponent
   ],
   imports: [
     BrowserModule,
